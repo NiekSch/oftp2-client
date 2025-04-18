@@ -17,7 +17,7 @@ var rootCmd = &cobra.Command{
 
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&activeOptions.OdetteId, "odetteId", "i", "LOCAL", "Odette ID of this client")
-	rootCmd.PersistentFlags().IntVarP(&activeOptions.Port, "port", "p", 3305, "Port of the Odette server")
+	rootCmd.PersistentFlags().IntVarP(&activeOptions.Port, "port", "p", 6619, "Port of the Odette server")
 	rootCmd.PersistentFlags().StringVarP(&activeOptions.Server, "host", "s", "localhost", "host to connect to")
 	rootCmd.PersistentFlags().BoolVarP(&activeOptions.Verbose, "verbose", "v", false, "verbose output")
 
@@ -35,3 +35,4 @@ func Execute() {
 		os.Exit(1)
 	}
 }
+	
