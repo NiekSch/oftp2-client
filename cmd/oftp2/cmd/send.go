@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"os"
 
+	"oftp2-client/internal/liboftp2/client"
+
 	"github.com/spf13/cobra"
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/client"
 )
 
 var sendCommand = &cobra.Command{

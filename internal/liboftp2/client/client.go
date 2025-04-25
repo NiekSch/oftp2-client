@@ -5,7 +5,7 @@ import (
 	"net"
 	"strings"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire"
+	"oftp2-client/internal/liboftp2/wire"
 )
 
 // OFTP2Client represents a communication facility to speak OFTP2 with a server.

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/endfile"
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/startfile"
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/transfer"
+	"oftp2-client/internal/liboftp2/wire/endfile"
+	"oftp2-client/internal/liboftp2/wire/startfile"
+	"oftp2-client/internal/liboftp2/wire/transfer"
 )
 
 // SendFile sends a file to the OFTP2 server

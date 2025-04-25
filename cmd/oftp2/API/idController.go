@@ -1,14 +1,15 @@
-package api
+package API
 
 import (
-	"fmt"
-	"os"
 	"encoding/json"
+	"fmt"
+	"net/http"
+	"oftp2-client/internal/liboftp2/client"
+	"os"
+	"strconv"
 
-	"github.com/NiekSch/oftp2-client/internal/liboftp2/client"
+	"github.com/gorilla/mux"
 )
-
-
 
 type User struct {
 	ID   int    `json:"id"`
@@ -20,30 +21,45 @@ var users = []User{
 	{ID: 2, Name: "Bob"},
 }
 
-func getUsers(w http.ResponseWriter, r *http.Request) {
+func GetUsers(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(users)
 }
 
-func getUser(w http.ResponseWriter, r *http.Request) {
+func GetUser(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
-	for _, user := range users {
-		if params["id"] == string(rune(user.ID)) {
-			json.NewEncoder(w).Encode(user)
-			return
-		}
+	if params["id"] == strconv.Itoa(users[0].ID) {
+		json.NewEncoder(w).Encode(users[0])
 	}
-	http.NotFound(w, r)
 }
 
+func DetermineId(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	server := "cert-oftp.daf.com" // Replace with actual server address
+	port := 6619                  // Replace with actual port number
+	odetteId := params["SSID"]
+	verbose := false // Set to true for verbose output
 
-func determineId() {
+	fmt.Printf("Server: %s\n", server)
+	fmt.Printf("Port: %d\n", port)
+	fmt.Printf("Odette ID: %s\n", odetteId)
+	fmt.Printf("Verbose: %t\n", verbose)
+
+	var id string = determineId(server, port, odetteId, verbose)
+
+	w.Header().Set("Content-Type", "plaintext")
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte(fmt.Sprintf("Server's id is: '%s'\n", id)))
+	fmt.Printf("Server's id is: '%s'\n", id)
+}
+
+func determineId(server string, port int, odetteId string, verbose bool) string {
 
 	r := client.OFTP2Client{
-		ServerHost: activeOptions.Server,
-		ServerPort: activeOptions.Port,
-		OdetteId:   activeOptions.OdetteId,
-		Verbose:    activeOptions.Verbose,
+		ServerHost: server,
+		ServerPort: port,
+		OdetteId:   odetteId,
+		Verbose:    verbose,
 	}
 
 	ssid, err := r.QueryServerCapabilities()
@@ -55,4 +71,6 @@ func determineId() {
 	r.Close()
 
 	fmt.Printf("Server's id is: '%s'\n", ssid.Id)
+
+	return ssid.Id
 }

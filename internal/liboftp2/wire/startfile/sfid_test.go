@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire"
+	"oftp2-client/internal/liboftp2/wire"
 )
 
 func TestSFID_RoundTrip(t *testing.T) {

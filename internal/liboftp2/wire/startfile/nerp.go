@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire"
+	"oftp2-client/internal/liboftp2/wire"
 )
 
 /*

@@ -3,7 +3,7 @@ package session
 import (
 	"fmt"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire"
+	"oftp2-client/internal/liboftp2/wire"
 )
 
 /*

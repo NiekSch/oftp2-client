@@ -6,12 +6,12 @@ import (
 	"reflect"
 	"regexp"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire"
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/authentication"
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/endfile"
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/session"
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/startfile"
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/transfer"
+	"oftp2-client/internal/liboftp2/wire"
+	"oftp2-client/internal/liboftp2/wire/authentication"
+	"oftp2-client/internal/liboftp2/wire/endfile"
+	"oftp2-client/internal/liboftp2/wire/session"
+	"oftp2-client/internal/liboftp2/wire/startfile"
+	"oftp2-client/internal/liboftp2/wire/transfer"
 )
 
 // DetermineMessageType determines the type of message found in the input buffer and returns

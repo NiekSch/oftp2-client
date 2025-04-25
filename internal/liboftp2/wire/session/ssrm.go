@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire"
+	"oftp2-client/internal/liboftp2/wire"
 )
 
 /*
@@ -21,7 +21,7 @@ import (
    o-------------------------------------------------------------------o
 */
 
-//  Start Session Ready Message
+// Start Session Ready Message
 type SSRM struct {
 }
 

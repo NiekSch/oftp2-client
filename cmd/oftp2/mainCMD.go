@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/thomsmits/oftp2-client/cmd/oftp2/cmd"
+	"oftp2-client/cmd/oftp2/cmd"
 )
 
 // Main function of the tool.
-func main() {
+func mainCMD() {
 
 	// As we are using the cobra framework for command line tools, this method is
 	// more or less empty and we delegate the whole option and command line handling

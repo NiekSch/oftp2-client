@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/session"
+	"oftp2-client/internal/liboftp2/wire/session"
 )
 
 // StartSession opens a session with the server

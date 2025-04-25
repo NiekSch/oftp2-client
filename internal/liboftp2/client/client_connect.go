@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/session"
+	"oftp2-client/internal/liboftp2/wire/session"
 )
 
 // Connect connects to the OFTP2 server

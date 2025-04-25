@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/session"
+	"oftp2-client/internal/liboftp2/wire/session"
 )
 
 func (s *OFTP2Client) internalQueryServerCapabilities(auth bool) (session.SSID, error) {

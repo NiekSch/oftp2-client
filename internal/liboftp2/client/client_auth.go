@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/thomsmits/oftp2-client/internal/liboftp2/wire/authentication"
+	"oftp2-client/internal/liboftp2/wire/authentication"
 )
 
 // AnswerChallenge answers a challenge received from the server and then sends a
